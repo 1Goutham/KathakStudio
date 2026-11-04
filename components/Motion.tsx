@@ -34,13 +34,13 @@ export default function Motion() {
     // stagger siblings that reveal together
     const byParent = new Map<Element, HTMLElement[]>();
     targets.forEach((el) => { const p = el.parentElement!; byParent.set(p, [...(byParent.get(p) || []), el]); });
-    byParent.forEach((list) => list.forEach((el, i) => el.style.setProperty("--d", `${Math.min(i, 6) * 90}ms`)));
+    byParent.forEach((list) => list.forEach((el, i) => el.style.setProperty("--d", `${Math.min(i, 6) * 110}ms`)));
 
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) { (e.target as HTMLElement).classList.add("is-in"); io.unobserve(e.target); }
       }),
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
     );
     if (reduce) targets.forEach((t) => t.classList.add("is-in"));
     else targets.forEach((t) => io.observe(t));
@@ -54,7 +54,7 @@ export default function Motion() {
     };
     let lenis: Lenis | null = null, raf = 0;
     if (!reduce) {
-      lenis = new Lenis({ lerp: 0.09, anchors: { offset: -72 }, autoRaf: false });
+      lenis = new Lenis({ lerp: 0.075, anchors: { offset: -72 }, autoRaf: false });
       const loop = (t: number) => { lenis!.raf(t); raf = requestAnimationFrame(loop); };
       raf = requestAnimationFrame(loop);
     }
