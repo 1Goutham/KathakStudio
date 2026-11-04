@@ -29,7 +29,6 @@ export default function Hero() {
             alt="Bronze Nataraja — Shiva as the cosmic dancer — within a ring of flames"
             hostRef={ref}
           />
-          <p className="stage-hint" aria-hidden="true"><span className="hint-fine">Move to light · </span>Drag to turn</p>
         </div>
       </div>
     </section>

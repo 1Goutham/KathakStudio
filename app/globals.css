@@ -122,7 +122,6 @@ p { margin: 0 0 1em; }
 .statue canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .statue-poster { position: absolute; left: 50%; top: 50%; height: 91%; width: auto; translate: -50% -50%; opacity: 0; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
 .statue.is-fallback .statue-poster { opacity: 1; }
-.stage-hint { position: absolute; bottom: -6px; left: 50%; translate: -50% 0; margin: 0; font-size: .7rem; letter-spacing: .28em; text-transform: uppercase; color: rgba(226,196,143,.55); white-space: nowrap; }
 
 /* Pointer light on cards */
 [data-light] { position: relative; isolation: isolate; }
@@ -344,7 +343,6 @@ p { margin: 0 0 1em; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
-@media (hover: none) { .hint-fine { display: none; } }
 
 /* ===================== Scroll reveals ===================== */
 /* Hidden only when JS is running (html.js), until Motion marks them .is-in */
@@ -362,7 +360,7 @@ p { margin: 0 0 1em; }
 .js .divider.is-in svg { opacity: 1; transform: none; }
 
 .js :is(.eyebrow, .lede, .prose, .outro, .welcome, .hero-body, .hero-ctas, .sub-head, .pull, .creds li, .badge, .checks li,
-  .next-steps h3, .next-steps li, .visit-quote, .heritage-quote, .chapter, .note, .stat, .t-card, .stage-hint):not(.is-in) {
+  .next-steps h3, .next-steps li, .visit-quote, .heritage-quote, .chapter, .note, .stat, .t-card):not(.is-in) {
   opacity: 0; transform: translate3d(0, 18px, 0);
 }
 .js [data-reveal="fade"] { transition: opacity 1.4s var(--ease-soft) var(--d, 0ms), transform 1.6s var(--ease-out) var(--d, 0ms); }

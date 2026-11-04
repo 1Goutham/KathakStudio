@@ -9,7 +9,7 @@ const GROUPS: Record<string, string> = {
   fade: [
     ".eyebrow", ".lede", ".prose", ".outro", ".welcome", ".hero-body", ".hero-ctas", ".sub-head", ".pull",
     ".creds li", ".badge", ".checks li", ".next-steps h3", ".next-steps li", ".visit-quote", ".heritage-quote",
-    ".chapter", ".note", ".stat", ".t-card", ".guru h2", ".stage-hint",
+    ".chapter", ".note", ".stat", ".t-card", ".guru h2",
   ].join(","),
   mask: [
     ".pillar", ".ritual", ".life-card", ".video-card", ".reflection", ".review", ".observe-card",
