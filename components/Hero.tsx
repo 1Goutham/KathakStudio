@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">{hero.eyebrow}</p>
-          <h1 data-split><Split text={hero.titleLead} /> <em><Split text={hero.titleAccent} start={wordCount(hero.titleLead)} /></em></h1>
+          <h1 data-split><span className="h1-line"><Split text={hero.titleLead} /></span> <em className="h1-line"><Split text={hero.titleAccent} start={wordCount(hero.titleLead)} /></em></h1>
           <p className="hero-body">{hero.body}</p>
           <div className="hero-ctas">
             <a href="#observe" className="btn">{hero.primaryCta}</a>
