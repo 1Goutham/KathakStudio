@@ -1,22 +1,26 @@
 import Header from "@/components/Header";
-import Reveal from "@/components/Reveal";
+import Box from "@/components/Box";
+import Hero from "@/components/Hero";
+import ScrollTimeline from "@/components/ScrollTimeline";
+import FocusList from "@/components/FocusList";
+import PointerLight from "@/components/PointerLight";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Mandala, Divider } from "@/components/Motif";
 import {
-  site, whatsappLink, hero, invitation, pillars, guru, journey, rituals,
+  site, whatsappLink, invitation, pillars, guru, journey, rituals,
   heritage, life, voices, observe, begin, visit,
 } from "@/lib/content";
 
 function SectionHead({ eyebrow, lead, accent, tail, intro, light = false }: { eyebrow: string; lead: string; accent: string; tail?: string; intro?: string; light?: boolean }) {
   return (
-    <Reveal className={`section-head ${light ? "on-dark" : ""}`}>
+    <Box className={`section-head ${light ? "on-dark" : ""}`}>
       <p className="eyebrow">{eyebrow}</p>
       <h2>
         {lead} <em>{accent}</em>{tail ? ` ${tail}` : ""}
       </h2>
       <Divider />
       {intro && <p className="lede">{intro}</p>}
-    </Reveal>
+    </Box>
   );
 }
 
@@ -26,42 +30,28 @@ export default function Home() {
   return (
     <>
       <Header />
+      <PointerLight />
       <main id="top">
-        {/* HERO */}
-        <section className="hero">
-          <Mandala className="hero-mandala" />
-          <div className="container hero-inner">
-            <Reveal><p className="eyebrow">{hero.eyebrow}</p></Reveal>
-            <Reveal delay={100}>
-              <h1>{hero.titleLead} <em>{hero.titleAccent}</em></h1>
-            </Reveal>
-            <Reveal delay={200}><p className="hero-body">{hero.body}</p></Reveal>
-            <Reveal delay={300} className="hero-ctas">
-              <a href="#observe" className="btn">{hero.primaryCta}</a>
-              <a href="#about" className="btn btn-ghost-light">{hero.secondaryCta}</a>
-            </Reveal>
-          </div>
-          <a href="#invitation" className="scroll-cue" aria-label="Scroll down"><span /></a>
-        </section>
+        <Hero />
 
         {/* INVITATION */}
         <section id="invitation" className="section paper">
           <div className="container narrow">
             <SectionHead eyebrow={invitation.eyebrow} lead={invitation.titleLead} accent={invitation.titleAccent} />
-            <Reveal><p className="prose center">{invitation.body}</p></Reveal>
+            <Box><p className="prose center">{invitation.body}</p></Box>
             <div className="notes">
               {invitation.notes.map((n, i) => (
-                <Reveal key={n.quote} delay={i * 90} className="note">
+                <Box key={n.quote} className="note">
                   <p className="note-quote">&ldquo;{n.quote}&rdquo;</p>
                   <p className="note-meta">{n.note}</p>
-                </Reveal>
+                </Box>
               ))}
             </div>
-            <Reveal className="welcome">
+            <Box className="welcome">
               <span className="big-quote" aria-hidden="true">&ldquo;</span>
               <p>{invitation.welcome}</p>
               <p className="sig">— {site.guru}, Founder of {site.name}</p>
-            </Reveal>
+            </Box>
           </div>
         </section>
 
@@ -71,15 +61,15 @@ export default function Home() {
             <SectionHead eyebrow={pillars.eyebrow} lead={pillars.titleLead} accent={pillars.titleAccent} intro={pillars.intro} />
             <div className="grid-3">
               {pillars.items.map((p, i) => (
-                <Reveal key={p.title} delay={i * 120} className="pillar">
+                <Box key={p.title} className="pillar" data-light>
                   <span className="num">{pad(i + 1)}</span>
                   <p className="kicker">{p.kicker}</p>
                   <h3>{p.title}</h3>
                   <p>{p.body}</p>
-                </Reveal>
+                </Box>
               ))}
             </div>
-            <Reveal><p className="outro">{pillars.outro}</p></Reveal>
+            <Box><p className="outro">{pillars.outro}</p></Box>
           </div>
         </section>
 
@@ -87,7 +77,7 @@ export default function Home() {
         <section id="guru" className="section dark">
           <Mandala className="bg-mandala" />
           <div className="container guru">
-            <Reveal className="guru-portrait">
+            <Box className="guru-portrait">
               <div className="portrait-frame">
                 {/* Replace with a real portrait: put guru.jpg in /public and use <img src="/guru.jpg" /> */}
                 <div className="portrait-placeholder">
@@ -103,22 +93,22 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </Reveal>
+            </Box>
             <div>
-              <Reveal>
+              <Box>
                 <p className="eyebrow">{guru.eyebrow}</p>
                 <h2>{guru.name}</h2>
                 <Divider />
                 <blockquote className="pull">&ldquo;{guru.quote}&rdquo;</blockquote>
-              </Reveal>
+              </Box>
               {guru.bio.map((p, i) => (
-                <Reveal key={i} delay={i * 80}><p className="prose">{p}</p></Reveal>
+                <Box key={i}><p className="prose">{p}</p></Box>
               ))}
-              <Reveal>
+              <Box>
                 <ul className="creds">
                   {guru.credentials.map((c) => <li key={c}>{c}</li>)}
                 </ul>
-              </Reveal>
+              </Box>
             </div>
           </div>
         </section>
@@ -127,9 +117,9 @@ export default function Home() {
         <section id="journey" className="section paper">
           <div className="container">
             <SectionHead eyebrow={journey.eyebrow} lead={journey.titleLead} accent={journey.titleAccent} intro={journey.intro} />
-            <ol className="timeline">
+            <ScrollTimeline>
               {journey.steps.map((s, i) => (
-                <Reveal as="li" key={s.title} delay={(i % 2) * 100} className="t-step">
+                <Box as="li" key={s.title} className="t-step">
                   <span className="t-dot">{i + 1}</span>
                   <div className="t-card">
                     <p className="kicker">Step {i + 1}</p>
@@ -137,9 +127,9 @@ export default function Home() {
                     <p>{s.body}</p>
                     <p className="t-note">{s.note}</p>
                   </div>
-                </Reveal>
+                </Box>
               ))}
-            </ol>
+            </ScrollTimeline>
           </div>
         </section>
 
@@ -149,11 +139,11 @@ export default function Home() {
             <SectionHead eyebrow={rituals.eyebrow} lead={rituals.titleLead} accent={rituals.titleAccent} tail={rituals.titleTail} intro={rituals.intro} />
             <div className="grid-3 rituals">
               {rituals.items.map((r, i) => (
-                <Reveal key={r.title} delay={(i % 3) * 100} className="ritual">
+                <Box key={r.title} className="ritual" data-light>
                   <span className="num">{pad(i + 1)}</span>
                   <h3>{r.title}</h3>
                   <p>{r.body}</p>
-                </Reveal>
+                </Box>
               ))}
             </div>
           </div>
@@ -164,9 +154,9 @@ export default function Home() {
           <span className="deva-watermark" aria-hidden="true">कथक</span>
           <div className="container">
             <SectionHead light eyebrow={heritage.eyebrow} lead={heritage.titleLead} accent={heritage.titleAccent} intro={heritage.intro} />
-            <div className="chapters">
+            <FocusList className="chapters">
               {heritage.chapters.map((c, i) => (
-                <Reveal key={c.label} className="chapter">
+                <Box key={c.label} className="chapter">
                   <div className="chapter-side">
                     <span className="num">{pad(i + 1)}</span>
                     <p className="kicker">{c.label}</p>
@@ -177,13 +167,13 @@ export default function Home() {
                     <h3>{c.title}</h3>
                     <p className="prose">{c.body}</p>
                   </div>
-                </Reveal>
+                </Box>
               ))}
-            </div>
-            <Reveal className="heritage-quote">
+            </FocusList>
+            <Box className="heritage-quote">
               <p>&ldquo;{heritage.closingQuote}&rdquo;</p>
               <span>— {site.guru}</span>
-            </Reveal>
+            </Box>
           </div>
         </section>
 
@@ -193,12 +183,12 @@ export default function Home() {
             <SectionHead eyebrow={life.eyebrow} lead={life.titleLead} accent={life.titleAccent} />
             <div className="life-grid">
               {life.items.map((l, i) => (
-                <Reveal key={l.title} delay={(i % 2) * 120} className={`life-card tone-${i}`}>
+                <Box key={l.title} className={`life-card tone-${i}`} data-light>
                   <Mandala className="life-mandala" />
                   <p className="kicker">{l.kicker}</p>
                   <h3>{l.title}</h3>
                   <p>{l.body}</p>
-                </Reveal>
+                </Box>
               ))}
             </div>
           </div>
@@ -212,7 +202,7 @@ export default function Home() {
             <h3 className="sub-head">Featured Video Stories</h3>
             <div className="grid-3">
               {voices.videos.map((v, i) => (
-                <Reveal key={i} delay={i * 100} className="video-card">
+                <Box key={i} className="video-card">
                   <div className="video-thumb" style={{ backgroundImage: `url(${v.image})` }}>
                     <span className="play" aria-hidden="true">▶</span>
                     <span className="duration">{v.duration}</span>
@@ -222,31 +212,31 @@ export default function Home() {
                     <strong>{v.name}</strong>
                     <span>{v.meta}</span>
                   </div>
-                </Reveal>
+                </Box>
               ))}
             </div>
 
             <h3 className="sub-head">Student Reflections</h3>
             <div className="grid-2">
               {voices.reflections.map((r, i) => (
-                <Reveal key={i} delay={(i % 2) * 100} className="reflection">
+                <Box key={i} className="reflection">
                   <p>{r.body}</p>
                   <div className="who"><strong>{r.name}</strong><span>{r.meta}</span></div>
-                </Reveal>
+                </Box>
               ))}
             </div>
 
             <h3 className="sub-head">Google Reviews <span className="rating">5.0 ★★★★★</span></h3>
             <div className="grid-3">
               {voices.reviews.map((r, i) => (
-                <Reveal key={i} delay={i * 100} className="review">
+                <Box key={i} className="review">
                   <div className="review-top">
                     <span className="avatar">{r.initial}</span>
                     <span className="stars">★★★★★</span>
                   </div>
                   <p>&ldquo;{r.body}&rdquo;</p>
                   <strong>{r.name}</strong>
-                </Reveal>
+                </Box>
               ))}
             </div>
           </div>
@@ -256,18 +246,18 @@ export default function Home() {
         <section id="observe" className="section observe">
           <Mandala className="bg-mandala" />
           <div className="container observe-inner">
-            <Reveal>
+            <Box>
               <p className="eyebrow">{observe.eyebrow}</p>
               <h2>{observe.titleLead} <em>{observe.titleAccent}</em></h2>
               <p className="prose">{observe.body}</p>
-            </Reveal>
-            <Reveal delay={150} className="observe-card">
+            </Box>
+            <Box className="observe-card">
               <ul className="checks">
                 {observe.points.map((p) => <li key={p}>{p}</li>)}
               </ul>
               <p className="badge">{observe.badge}</p>
               <a href="#begin" className="btn">Request a Visit</a>
-            </Reveal>
+            </Box>
           </div>
         </section>
 
@@ -276,7 +266,7 @@ export default function Home() {
           <div className="container">
             <SectionHead eyebrow={begin.eyebrow} lead={begin.titleLead} accent={begin.titleAccent} intro={begin.body} />
             <div className="begin-grid">
-              <Reveal className="next-steps">
+              <Box className="next-steps">
                 <h3>What Happens Next?</h3>
                 <ol>
                   {begin.steps.map((s, i) => (
@@ -287,8 +277,8 @@ export default function Home() {
                     </li>
                   ))}
                 </ol>
-              </Reveal>
-              <Reveal delay={150}><EnquiryForm /></Reveal>
+              </Box>
+              <Box><EnquiryForm /></Box>
             </div>
           </div>
         </section>
@@ -298,24 +288,24 @@ export default function Home() {
           <div className="container">
             <SectionHead light eyebrow={visit.eyebrow} lead={visit.titleLead} accent={visit.titleAccent} />
             <div className="visit-grid">
-              <Reveal className="address-card">
+              <Box className="address-card">
                 <h3>Studio Address</h3>
                 <address>{site.address.map((l) => <span key={l}>{l}</span>)}</address>
                 <a className="btn btn-ghost-light" href={site.mapsUrl} target="_blank" rel="noopener noreferrer">View on Google Maps</a>
-              </Reveal>
-              <Reveal delay={120} className="map-wrap">
+              </Box>
+              <Box className="map-wrap">
                 <iframe
                   title="Map to Tribhang"
                   src="https://www.google.com/maps?q=Thondamuthur+Road+Vadavalli+Coimbatore+641041&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
-              </Reveal>
+              </Box>
             </div>
-            <Reveal className="visit-quote">
+            <Box className="visit-quote">
               <p>&ldquo;{visit.quote}&rdquo;</p>
               <span>— {site.name}, {site.city}</span>
-            </Reveal>
+            </Box>
           </div>
         </section>
       </main>
