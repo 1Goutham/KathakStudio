@@ -26,7 +26,7 @@ export default function Hero() {
             src="/nataraja.webp"
             depthSrc="/nataraja-depth.png"
             normalSrc="/nataraja-normal.webp"
-            alt="Bronze Nataraja — Shiva as the cosmic dancer — within a ring of flames"
+            alt="Bronze Nataraja, Shiva as the cosmic dancer, within a ring of flames"
             hostRef={ref}
           />
         </div>

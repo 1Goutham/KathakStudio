@@ -1,14 +1,14 @@
 // All site copy lives here so it can be edited without touching layout code.
-// Testimonials, stats and contact details are placeholders — replace them
+// Testimonials, stats and contact details are placeholders. Replace them
 // with real, approved content before going live.
 
 export const site = {
   name: "Tribhang",
-  fullName: "Tribhang – The Kathak Studio",
+  fullName: "Tribhang · The Kathak Studio",
   tagline: "Awakening the spirit through sacred steps.",
   city: "Coimbatore",
   guru: "Guru Ishvarya",
-  address: ["Tribhang – The Kathak Studio", "Thondamuthur Road, Vadavalli", "Coimbatore – 641041"],
+  address: ["Tribhang · The Kathak Studio", "Thondamuthur Road, Vadavalli", "Coimbatore 641041"],
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Thondamuthur+Road+Coimbatore+641041",
   instagram: "https://www.instagram.com/tribhang.kathak",
   facebook: "https://www.facebook.com/tribhang.kathak",
@@ -32,7 +32,7 @@ export const hero = {
   eyebrow: "Coimbatore • Est. with Love",
   titleLead: "Awakening the spirit",
   titleAccent: "through sacred steps.",
-  body: "A studio where Kathak is practised as a path inward — of rhythm, reflection and finding the people you belong with.",
+  body: "A studio where Kathak is practised as a path inward: rhythm, reflection and finding the people you belong with.",
   primaryCta: "Observe a Class",
   secondaryCta: "Discover Tribhang",
 };
@@ -41,7 +41,7 @@ export const invitation = {
   eyebrow: "A gentle invitation",
   titleLead: "You may have come for the dance.",
   titleAccent: "You may stay for much more.",
-  body: "Most people who reach our door are carrying something besides curiosity about footwork — a wish to feel easy in their own body, to touch a tradition they have long admired, or simply to find a room where they can be themselves.",
+  body: "Most people who reach our door are carrying something besides curiosity about footwork. A wish to feel easy in their own body, to touch a tradition they have long admired, or simply to find a room where they can be themselves.",
   notes: [
     { quote: "I have never danced before.", note: "A first message, typed and deleted three times" },
     { quote: "Isn't it too late for me?", note: "Asked by someone in their thirties" },
@@ -56,12 +56,12 @@ export const pillars = {
   eyebrow: "What is Tribhang",
   titleLead: "Three pillars of",
   titleAccent: "a living practice",
-  intro: "Tribhang is less a syllabus and more an ecosystem — three practices that lean on each other and change the people inside them.",
+  intro: "Tribhang is less a syllabus and more an ecosystem: three practices that lean on each other and change the people inside them.",
   items: [
     {
       kicker: "The Ancient Vocabulary",
       title: "Kathak",
-      body: "One of India's classical dance traditions, Kathak grew from the storytellers of North India. We teach it as a language for your own expression — each gesture meaningful, each step deliberate.",
+      body: "One of India's classical dance traditions, Kathak grew from the storytellers of North India. We teach it as a language for your own expression, where each gesture is meaningful and each step deliberate.",
     },
     {
       kicker: "The Practice Within",
@@ -87,17 +87,17 @@ export const guru = {
   ],
   quote: "I wanted to build a room where people could return to themselves. The dance is how we get there.",
   bio: [
-    "Guru Ishvarya has devoted more than fifteen years to Kathak, training in the Lucknow Gharana — a lineage known for grace, lyricism and expressive storytelling.",
+    "Guru Ishvarya has devoted more than fifteen years to Kathak, training in the Lucknow Gharana, a lineage known for grace, lyricism and expressive storytelling.",
     "Her students range from five-year-olds to adults who had never danced before their forties. What they share is the experience of being seen as a whole person, not only as a dancer in progress.",
-    "She teaches from a simple conviction: the body holds knowledge the mind reaches only slowly. Kathak gives that knowledge a way to surface — through rhythm, through story, and through attention.",
+    "She teaches from a simple conviction: the body holds knowledge the mind reaches only slowly. Kathak gives that knowledge a way to surface through rhythm, story and attention.",
   ],
   credentials: [
-    "Lucknow Gharana — classical lineage",
+    "Lucknow Gharana, classical lineage",
     "BFA in Performing Arts",
     "Performer at national cultural festivals",
     "Mentor to 200+ students of all ages",
     "Advocate for heritage through the arts",
-    "Founder, Tribhang – The Kathak Studio",
+    "Founder, Tribhang · The Kathak Studio",
   ],
 };
 
@@ -109,9 +109,9 @@ export const journey = {
   steps: [
     { title: "Observe", body: "Sit in on a real class before deciding anything. Watch, listen, meet the Guru and the students.", note: "Free. No commitment." },
     { title: "Learn", body: "Begin at your own pace in a structured but unhurried curriculum, with every step explained patiently.", note: "Beginner to advanced." },
-    { title: "Reflect", body: "Every few sessions we pause — to write, talk or simply sit with what the practice is stirring.", note: "Part of every cycle." },
+    { title: "Reflect", body: "Every few sessions we pause to write, talk or simply sit with what the practice is stirring.", note: "Part of every cycle." },
     { title: "Grow", body: "Progress shows up in technique, and also in confidence, self-awareness and how you carry yourself.", note: "Holistic growth." },
-    { title: "Perform", body: "When you feel ready — your call — share your dance on stage in a joyful, low-pressure setting.", note: "Annual showcases & events." },
+    { title: "Perform", body: "When you feel ready (your call), share your dance on stage in a joyful, low-pressure setting.", note: "Annual showcases & events." },
     { title: "Belong", body: "Eventually it stops being a class you attend and becomes a community you are part of.", note: "The real destination." },
   ],
 };
@@ -127,7 +127,7 @@ export const rituals = {
     { title: "Goal Reviews", body: "Each quarter, student and Guru meet one-to-one to look back, celebrate, and set the next intentions." },
     { title: "Reflection Circles", body: "Regular group circles where students share what the practice has been opening up for them." },
     { title: "Community Conversations", body: "Open discussions about Kathak's history, its cultural meaning, and our own relationship with heritage." },
-    { title: "Progress Celebrations", body: "First tatkar, first composition, first stage — every milestone is noticed and honoured." },
+    { title: "Progress Celebrations", body: "First tatkar, first composition, first stage. Every milestone is noticed and honoured." },
     { title: "Gentle Accountability", body: "When someone struggles or goes quiet, the Guru reaches out personally. Support, never pressure." },
   ],
 };
@@ -140,21 +140,21 @@ export const heritage = {
   chapters: [
     {
       label: "Temple Origins",
-      aside: ["कथा — story", "कथक — the storyteller"],
+      aside: ["कथा: story", "कथक: the storyteller"],
       line: "It began with storytellers.",
       title: "Rooted in devotion",
-      body: "Kathak traces back to the Kathakars, travelling storytellers of North India who brought epics like the Ramayana and Mahabharata to life through gesture, expression and rhythm — often in temple spaces, as an act of worship.",
+      body: "Kathak traces back to the Kathakars, travelling storytellers of North India who brought epics like the Ramayana and Mahabharata to life through gesture, expression and rhythm, often in temple spaces as an act of worship.",
     },
     {
-      label: "Guru–Shishya",
-      aside: ["Guru–shishya parampara", "teacher to student, hand to hand"],
+      label: "Guru Shishya",
+      aside: ["Guru shishya parampara", "teacher to student, hand to hand"],
       line: "Knowledge carried in the body.",
       title: "An oral lineage",
-      body: "For generations the form passed directly from teacher to student through demonstration and repetition rather than notation. Each lineage developed its own character — its own feel for rhythm and expression.",
+      body: "For generations the form passed directly from teacher to student through demonstration and repetition rather than notation. Each lineage developed its own character and its own feel for rhythm and expression.",
     },
     {
       label: "Royal Courts",
-      aside: ["Lucknow — grace, lyricism", "Jaipur — power, precision"],
+      aside: ["Lucknow: grace, lyricism", "Jaipur: power, precision"],
       line: "The ghungroo found new stages.",
       title: "Refined in the courts",
       body: "Under court patronage Kathak absorbed new influences, developing its signature spins (chakkars) and intricate footwork (tatkar). Distinct gharanas emerged, notably the lyrical Lucknow school and the vigorous Jaipur school.",
@@ -171,7 +171,7 @@ export const heritage = {
       aside: ["Now, you are part of it."],
       line: "Kathak belongs to whoever is willing to learn.",
       title: "A living language",
-      body: "We treat Kathak as something alive, not archived — a language that still speaks to love, loss, devotion and joy. Stepping into the studio means joining a very long conversation and adding your own voice to it.",
+      body: "We treat Kathak as something alive, not archived. It is a language that still speaks to love, loss, devotion and joy. Stepping into the studio means joining a very long conversation and adding your own voice to it.",
     },
   ],
   closingQuote: "Tradition is not ash to be preserved. It is a flame to be tended.",
@@ -182,14 +182,14 @@ export const life = {
   titleLead: "Life at",
   titleAccent: "Tribhang",
   items: [
-    { kicker: "Perform", title: "Step into the light", body: "Festivals, annual showcases and intimate studio evenings — performance as a gift, not a test." },
+    { kicker: "Perform", title: "Step into the light", body: "Festivals, annual showcases and intimate studio evenings. Performance is a gift, not a test." },
     { kicker: "Connect", title: "Find your people", body: "First-day nerves turn into lasting friendships that reach well beyond the studio." },
     { kicker: "Grow", title: "Become who you're becoming", body: "Whether it's a new tukda or simply showing up every week, progress here is seen and celebrated." },
-    { kicker: "Belong", title: "Come home to yourself", body: "A place where you are known and your presence matters — with Kathak as the bridge." },
+    { kicker: "Belong", title: "Come home to yourself", body: "A place where you are known and your presence matters, with Kathak as the bridge." },
   ],
 };
 
-// Placeholder testimonials — replace with real, consented student stories.
+// Placeholder testimonials. Replace with real, consented student stories.
 export const voices = {
   eyebrow: "From the community",
   titleLead: "Voices of",
@@ -201,12 +201,12 @@ export const voices = {
   ],
   reflections: [
     { body: "I found the sense of belonging I hadn't known I was missing. The dance is lovely; the people are why I keep returning.", name: "Student Name", meta: "Working professional, Coimbatore" },
-    { body: "I was sure I'd missed my chance with classical dance. A few months later I performed on stage for the first time — and it felt wonderful.", name: "Student Name", meta: "Parent, joined in her late thirties" },
+    { body: "I was sure I'd missed my chance with classical dance. A few months later I performed on stage for the first time, and it felt wonderful.", name: "Student Name", meta: "Parent, joined in her late thirties" },
     { body: "New city, no friends yet. I came to observe one class and signed up that week. The studio became my anchor.", name: "Student Name", meta: "Relocated to Coimbatore" },
     { body: "I'd wanted to learn for decades and finally started in my fifties. I was treated exactly like everyone else, and that meant a lot.", name: "Student Name", meta: "Retired teacher" },
   ],
   reviews: [
-    { initial: "A", body: "A genuinely nurturing space — as a dancer and as a person.", name: "Reviewer A." },
+    { initial: "A", body: "A genuinely nurturing space, as a dancer and as a person.", name: "Reviewer A." },
     { initial: "V", body: "A teacher who really sees each student. Highly recommended.", name: "Reviewer V." },
     { initial: "L", body: "I was hesitant at first. Now I tell friends to at least go and watch one class.", name: "Reviewer L." },
   ],
@@ -219,7 +219,7 @@ export const observe = {
   body: "We'd rather you see Tribhang for yourself before enrolling. Come and watch a class from the side, take in the atmosphere, and let the studio make its own case.",
   points: [
     "No previous dance experience needed",
-    "No judgement — only gentle guidance",
+    "No judgement, only gentle guidance",
     "Meet and talk with Guru Ishvarya in person",
     "Experience the studio atmosphere first-hand",
     "No sales pitch, no pressure",
@@ -233,7 +233,7 @@ export const begin = {
   titleAccent: "Journey",
   body: "Every introduction is read personally by Guru Ishvarya, who then invites you to observe a class before any enrolment. It's the start of a real conversation, not an automated funnel.",
   steps: [
-    { title: "Your introduction arrives", body: "It goes straight to Guru Ishvarya — no bots, no assistants." },
+    { title: "Your introduction arrives", body: "It goes straight to Guru Ishvarya. No bots, no assistants." },
     { title: "It's read with care", body: "Your story matters before your first step." },
     { title: "You're invited to observe", body: "Sit in on a class, free and without obligation." },
     { title: "You decide", body: "Only after feeling the room and meeting the community." },
@@ -244,5 +244,5 @@ export const visit = {
   eyebrow: "Find us",
   titleLead: "Visit",
   titleAccent: "Tribhang",
-  quote: "Come to learn, to reconnect with heritage, or simply to find your place — the door is open.",
+  quote: "Come to learn, to reconnect with heritage, or simply to find your place, the door is open.",
 };

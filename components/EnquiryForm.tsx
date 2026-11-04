@@ -46,16 +46,16 @@ export default function EnquiryForm() {
       <div className="field-row">
         <label>Age group
           <select name="age" defaultValue="Adult (18+)">
-            <option>Child (5–12)</option>
-            <option>Teen (13–17)</option>
+            <option>Child (5 to 12)</option>
+            <option>Teen (13 to 17)</option>
             <option>Adult (18+)</option>
           </select>
         </label>
         <label>Dance experience
-          <select name="experience" defaultValue="None — complete beginner">
-            <option>None — complete beginner</option>
-            <option>Some — a little training</option>
-            <option>Trained — returning to Kathak</option>
+          <select name="experience" defaultValue="None, complete beginner">
+            <option>None, complete beginner</option>
+            <option>Some, a little training</option>
+            <option>Trained, returning to Kathak</option>
           </select>
         </label>
       </div>

@@ -54,7 +54,7 @@ export default function Home() {
             <Box className="welcome">
               <span className="big-quote" aria-hidden="true">&ldquo;</span>
               <p>{invitation.welcome}</p>
-              <p className="sig">— {site.guru}, Founder of {site.name}</p>
+              <p className="sig">{site.guru}, Founder of {site.name}</p>
             </Box>
           </div>
         </section>
@@ -176,7 +176,7 @@ export default function Home() {
             </FocusList>
             <Box className="heritage-quote">
               <p>&ldquo;{heritage.closingQuote}&rdquo;</p>
-              <span>— {site.guru}</span>
+              <span>{site.guru}</span>
             </Box>
           </div>
         </section>
@@ -308,7 +308,7 @@ export default function Home() {
             </div>
             <Box className="visit-quote">
               <p>&ldquo;{visit.quote}&rdquo;</p>
-              <span>— {site.name}, {site.city}</span>
+              <span>{site.name}, {site.city}</span>
             </Box>
           </div>
         </section>
