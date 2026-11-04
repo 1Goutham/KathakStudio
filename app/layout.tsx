@@ -16,7 +16,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} ${deva.variable}`}>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${deva.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Gate reveal styles on JS so content is never hidden without it */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>{children}</body>
     </html>
   );

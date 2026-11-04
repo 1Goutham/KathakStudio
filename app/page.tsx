@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import ScrollTimeline from "@/components/ScrollTimeline";
 import FocusList from "@/components/FocusList";
 import PointerLight from "@/components/PointerLight";
+import Motion from "@/components/Motion";
+import Split, { wordCount } from "@/components/Split";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Mandala, Divider } from "@/components/Motif";
 import {
@@ -15,8 +17,9 @@ function SectionHead({ eyebrow, lead, accent, tail, intro, light = false }: { ey
   return (
     <Box className={`section-head ${light ? "on-dark" : ""}`}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2>
-        {lead} <em>{accent}</em>{tail ? ` ${tail}` : ""}
+      <h2 data-split>
+        <Split text={lead} /> <em><Split text={accent} start={wordCount(lead)} /></em>
+        {tail ? <> <Split text={tail} start={wordCount(lead) + wordCount(accent)} /></> : null}
       </h2>
       <Divider />
       {intro && <p className="lede">{intro}</p>}
@@ -31,6 +34,7 @@ export default function Home() {
     <>
       <Header />
       <PointerLight />
+      <Motion />
       <main id="top">
         <Hero />
 
@@ -97,7 +101,7 @@ export default function Home() {
             <div>
               <Box>
                 <p className="eyebrow">{guru.eyebrow}</p>
-                <h2>{guru.name}</h2>
+                <h2 data-split><Split text={guru.name} /></h2>
                 <Divider />
                 <blockquote className="pull">&ldquo;{guru.quote}&rdquo;</blockquote>
               </Box>
@@ -248,7 +252,7 @@ export default function Home() {
           <div className="container observe-inner">
             <Box>
               <p className="eyebrow">{observe.eyebrow}</p>
-              <h2>{observe.titleLead} <em>{observe.titleAccent}</em></h2>
+              <h2 data-split><Split text={observe.titleLead} /> <em><Split text={observe.titleAccent} start={wordCount(observe.titleLead)} /></em></h2>
               <p className="prose">{observe.body}</p>
             </Box>
             <Box className="observe-card">

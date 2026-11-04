@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Statue3D from "./Statue3D";
 import { Mandala } from "./Motif";
 import { hero } from "@/lib/content";
+import Split, { wordCount } from "./Split";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -11,7 +12,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">{hero.eyebrow}</p>
-          <h1>{hero.titleLead} <em>{hero.titleAccent}</em></h1>
+          <h1 data-split><Split text={hero.titleLead} /> <em><Split text={hero.titleAccent} start={wordCount(hero.titleLead)} /></em></h1>
           <p className="hero-body">{hero.body}</p>
           <div className="hero-ctas">
             <a href="#observe" className="btn">{hero.primaryCta}</a>
@@ -24,6 +25,7 @@ export default function Hero() {
           <Statue3D
             src="/nataraja.webp"
             depthSrc="/nataraja-depth.png"
+            normalSrc="/nataraja-normal.webp"
             alt="Bronze Nataraja — Shiva as the cosmic dancer — within a ring of flames"
             hostRef={ref}
           />
