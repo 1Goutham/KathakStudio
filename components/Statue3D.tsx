@@ -81,7 +81,8 @@ void main() {
 
   vec4 dz = texture(uDepth, vUv);
   float ao = mix(0.35, 1.0, dz.g);
-  vec3 n = normalize(uRot * (texture(uNormal, vUv).rgb * 2.0 - 1.0));
+  // the photo already carries the true shading; normals only add a gentle response to the light
+  vec3 n = normalize(uRot * normalize(mix(vec3(0.0, 0.0, 1.0), texture(uNormal, vUv).rgb * 2.0 - 1.0, 0.5)));
   vec3 V = normalize(-vWorld);
   vec3 L = normalize(uLight);
   vec3 H = normalize(L + V);
@@ -93,13 +94,12 @@ void main() {
 
   vec3 gold = c.rgb;
   vec3 R = reflect(-V, n);
-  vec3 col = gold * mix(0.78, 1.22, ndl) * ao;
-  col += gold * env(R) * 0.38 * (0.3 + fres);
-  col += vec3(1.0, 0.9, 0.7) * pow(ndh, 120.0) * 0.9 * smoothstep(0.25, 0.8, lum);
-  col += gold * pow(ndh, 14.0) * 0.12;
-  col += vec3(0.9, 0.5, 0.28) * fres * 0.12 * ao;
-  col = mix(vec3(dot(col, vec3(0.299, 0.587, 0.114))), col, 0.92);
-  col = pow(col, vec3(1.08));
+  vec3 col = gold * mix(0.9, 1.1, ndl) * mix(0.8, 1.0, ao);
+  col += gold * env(R) * 0.16 * (0.3 + fres);
+  col += vec3(1.0, 0.9, 0.7) * pow(ndh, 160.0) * 0.4 * smoothstep(0.35, 0.85, lum);
+  col += gold * pow(ndh, 14.0) * 0.05;
+  col += vec3(0.9, 0.5, 0.28) * fres * 0.04 * ao;
+  col = pow(col, vec3(1.03));
 
   // freshly formed metal: a narrow warm band that cools as the front moves on
   float band = 1.0 - smoothstep(0.0, 0.06, e);
@@ -308,7 +308,7 @@ export default function Statue3D({
     const GW = 210, GH = Math.round(GW * 1468 / 1048);
     let front: Float32Array | null = null;
     let cells: { u: Float32Array; v: Float32Array; d: Float32Array; t: Float32Array; n: number } | null = null;
-    let imgAspect = 1048 / 1468, depthScale = 0.2;
+    let imgAspect = 1048 / 1468, depthScale = 0.075;
 
     const spawn = (ux: number, uy: number, dz: number, mode: "form" | "fall", chip: boolean, puff: boolean) => {
       if (!MAX) return;
@@ -421,11 +421,11 @@ export default function Statue3D({
 
     const retarget = () => {
       const scroll = S.scroll.t;
-      S.ry.t = pointer.nx * 0.24 * amp + soft(turn.y, 0.42) + scroll * 0.45;
-      S.rx.t = pointer.ny * 0.12 * amp + soft(turn.x, 0.14) - scroll * 0.1;
+      S.ry.t = pointer.nx * 0.13 * amp + soft(turn.y, 0.24) + scroll * 0.1;
+      S.rx.t = pointer.ny * 0.06 * amp + soft(turn.x, 0.07) - scroll * 0.04;
       S.lx.t = Math.max(-1.3, Math.min(1.3, pointer.nx * 1.5));
       S.ly.t = Math.max(-1, Math.min(1.3, -pointer.ny * 1.5 + 0.3));
-      S.z.t = (hovering ? 0.12 : 0) - scroll * 0.25;
+      S.z.t = (hovering ? 0.05 : 0) - scroll * 0.15;
     };
 
     const resize = () => {
@@ -448,8 +448,8 @@ export default function Statue3D({
       };
       if (drag) {
         const now = performance.now();
-        turn.y = drag.oy + (e.clientX - drag.x) * 0.005;
-        turn.x = drag.ox + (e.clientY - drag.y) * 0.003;
+        turn.y = drag.oy + (e.clientX - drag.x) * 0.003;
+        turn.x = drag.ox + (e.clientY - drag.y) * 0.0015;
         drag.vel = (e.clientX - drag.lastX) / Math.max(now - drag.lastT, 1);
         drag.lastX = e.clientX; drag.lastT = now;
       }
@@ -461,7 +461,7 @@ export default function Statue3D({
     };
     const onUp = () => {
       if (!drag) return;
-      turn.vel = drag.vel * 0.06;
+      turn.vel = drag.vel * 0.03;
       drag = null; box.classList.remove("is-dragging"); kick();
     };
     const onEnter = () => { hovering = true; retarget(); kick(); };
@@ -502,7 +502,7 @@ export default function Statue3D({
       if (MAX) simulate(dt, t);
 
       const settle = reduce ? 1 : easeInOut(clamp01(t / 3.6));
-      depthScale = 0.2 * (0.35 + 0.65 * settle);
+      depthScale = 0.075 * (0.5 + 0.5 * settle);
       const lx = S.lx.x * settle + -1.4 * (1 - settle), ly = S.ly.x * settle + 1.2 * (1 - settle);
 
       const R = rot(S.rx.x, S.ry.x);

@@ -56,21 +56,21 @@ upper = upper * (1 - w_dwarf) + np.maximum(upper, d_dwarf) * w_dwarf
 depth = upper * (1 - w_ped) + d_ped * w_ped
 
 # soften seams between regions, keep silhouette edges bevelled
-depth = cv2.GaussianBlur(depth * m, (0, 0), 2.2)
-norm = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 2.2) + 1e-4
+depth = cv2.GaussianBlur(depth * m, (0, 0), 4.0)
+norm = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 4.0) + 1e-4
 depth = np.where(m > 0, depth / norm, 0) * (0.6 + 0.4 * round_of(4))
 
 # fine engraving relief from luminance high-pass
 hp = lum - cv2.GaussianBlur(lum, (0, 0), 5)
-depth = np.clip(depth + 0.035 * hp, 0, 1) * m
+depth = np.clip(depth + 0.015 * hp, 0, 1) * m
 depth /= depth.max()
 
 # --- normals (for lighting) ---------------------------------------------
-dz = cv2.GaussianBlur(depth, (0, 0), 0.8) * 60.0
+dz = cv2.GaussianBlur(depth, (0, 0), 1.5) * 40.0
 nx = -cv2.Sobel(dz, cv2.CV_32F, 1, 0, ksize=3) / 8
 ny = -cv2.Sobel(dz, cv2.CV_32F, 0, 1, ksize=3) / 8
 # add micro-normals from the photo itself for metal detail
-lb = cv2.GaussianBlur(lum, (0, 0), 1.0) * 2.5
+lb = cv2.GaussianBlur(lum, (0, 0), 1.2) * 1.0
 nx += -cv2.Sobel(lb, cv2.CV_32F, 1, 0, ksize=3) / 8
 ny += -cv2.Sobel(lb, cv2.CV_32F, 0, 1, ksize=3) / 8
 nz = np.ones_like(nx)
