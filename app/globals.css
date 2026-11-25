@@ -401,7 +401,4 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 /* Enquiry form extras */
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-.form-error { color: #a12a2a; font-size: .9rem; margin: 0; }
-.form-card .btn[disabled] { opacity: .7; cursor: progress; }
 .form-done .btn + .btn { margin-top: 10px; }

@@ -20,23 +20,7 @@ npm run build && npm start
 - `components/Motion.tsx`: scroll reveals (masked word-rise headings, soft fade-up text, unmasking cards, drawing dividers), Lenis smooth scroll and the gold progress line. Respects `prefers-reduced-motion`; content is never hidden without JS.
 - `components/Split.tsx`: splits headings into words for the reveal.
 - Input-driven extras: `ScrollTimeline` (journey line fills with scroll), `FocusList` (heritage chapter in view is highlighted), `PointerLight` (cursor light on cards).
-- `components/` also has `Header`, `EnquiryForm`, `Motif` (SVG mandala).
-- `app/api/enquiry/route.ts`: receives the enquiry form and sends it straight to the studio WhatsApp (see below).
-
-## Automatic WhatsApp enquiries
-
-The form posts to `/api/enquiry`, which validates the input (with a honeypot and a per-visitor rate limit) and sends it to `site.whatsappNumber`. Until a provider is configured, or if sending fails, the visitor is offered a one-tap "Open WhatsApp" with the message ready, so nothing is lost. Set ONE of these in Vercel (Project, Settings, Environment Variables), then redeploy. See `.env.example`.
-
-**Option A: CallMeBot (free, quickest)**
-1. On Guru Ishvarya's phone, open callmebot.com, find the WhatsApp API page and save the bot number it lists.
-2. Send it the activation message shown there ("I allow callmebot to send me messages").
-3. Copy the API key it replies with into `CALLMEBOT_APIKEY`.
-
-**Option B: WhatsApp Business Cloud API (official)**
-1. In Meta for Developers, create an app with the WhatsApp product and add a sender number. It must be a different number from hers; a number registered to the API can no longer use the normal WhatsApp app.
-2. Create a permanent access token (system user) and note the sender's Phone number ID.
-3. Create a Utility message template named `new_enquiry` whose body has six variables, in order: name, phone, email, age group, experience, message. For example: `New enquiry from {{1}} ({{2}}, {{3}}). Age: {{4}}. Experience: {{5}}. Message: {{6}}`. Wait for approval.
-4. Set `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID` (and `WHATSAPP_TEMPLATE` / `WHATSAPP_TEMPLATE_LANG` if different).
+- `components/` also has `Header`, `EnquiryForm` (opens WhatsApp with the enquiry ready to send), `Motif` (SVG mandala).
 
 ## Before launch
 
