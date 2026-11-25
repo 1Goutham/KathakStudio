@@ -283,6 +283,7 @@ p { margin: 0 0 1em; }
 .form-card input:focus, .form-card select:focus, .form-card textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(192,138,62,.18); }
 .form-card textarea { resize: vertical; }
 .form-note { font-size: .82rem; color: var(--muted); text-align: center; margin: 0; }
+.form-body, .form-done { display: flex; flex-direction: column; gap: 16px; }
 .form-done { text-align: center; align-items: center; }
 .form-done p { color: var(--muted); }
 
@@ -398,3 +399,9 @@ html.lenis, html.lenis body { height: auto; }
   .js [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
   .js [data-split] .w > span { opacity: 1 !important; }
 }
+
+/* Enquiry form extras */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-error { color: #a12a2a; font-size: .9rem; margin: 0; }
+.form-card .btn[disabled] { opacity: .7; cursor: progress; }
+.form-done .btn + .btn { margin-top: 10px; }
