@@ -10,18 +10,23 @@ export default function EnquiryForm() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
+    const email = String(f.get("email") || "").trim();
     const text = [
       `Namaste ${site.guru},`,
       ``,
       `Name: ${f.get("name")}`,
       `Phone: ${f.get("phone")}`,
-      f.get("email") ? `Email: ${f.get("email")}` : "",
+      ...(email ? [`Email: ${email}`] : []),
       `Age group: ${f.get("age")}`,
       `Dance experience: ${f.get("experience")}`,
       ``,
       `${f.get("message")}`,
-    ].filter((l) => l !== "").join("\n");
-    window.open(whatsappLink(text), "_blank", "noopener");
+    ].join("\n");
+    const url = whatsappLink(text);
+    // New tab where allowed; if a popup blocker stops it, open WhatsApp in this tab instead.
+    const w = window.open(url, "_blank");
+    if (w) w.opener = null;
+    else window.location.href = url;
     setSent(true);
   }
 

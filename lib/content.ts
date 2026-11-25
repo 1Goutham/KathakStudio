@@ -12,8 +12,8 @@ export const site = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Thondamuthur+Road+Coimbatore+641041",
   instagram: "https://www.instagram.com/tribhang.kathak",
   facebook: "https://www.facebook.com/tribhang.kathak",
-  // Replace with the studio's real WhatsApp number (country code, no +).
-  whatsappNumber: "919876543210",
+  // Guru Ishvarya's WhatsApp (country code, no +). Enquiries and WhatsApp buttons go here.
+  whatsappNumber: "918148562853",
 };
 
 export const whatsappLink = (text = `Hello ${site.guru}, I would like to know more about Tribhang.`) =>

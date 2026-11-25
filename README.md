@@ -24,6 +24,6 @@ npm run build && npm start
 
 ## Before launch
 
-- Set the real WhatsApp number in `site.whatsappNumber` (`lib/content.ts`).
+- WhatsApp enquiries go to `site.whatsappNumber` in `lib/content.ts` (currently +91 81485 62853).
 - Replace placeholder testimonials, reviews and video thumbnails with real, consented content.
 - Add a guru portrait to `/public` and swap the placeholder in the Guru section.
