@@ -515,3 +515,61 @@ html.lenis, html.lenis body { height: auto; }
   .t-step.is-lit .t-dot::after { animation: none; }
   .btn::after { display: none; }
 }
+
+/* ===================== Custom cursor ===================== */
+:root { --c-red: #b0141f; --c-gold: #c9a14a; }
+.cursor { position: fixed; inset: 0; z-index: 9999; pointer-events: none; }
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+html.has-cursor :is(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea) { cursor: text !important; }
+.c-pos { position: fixed; left: 0; top: 0; will-change: transform; }
+
+.c-dot {
+  width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d8333d, var(--c-red) 55%, #7e0c14);
+  box-shadow: 0 0 0 1.5px rgba(255, 244, 228, .55), 0 1px 3px rgba(60, 0, 8, .35);
+  transition: transform .35s var(--ease-out), opacity .25s ease;
+}
+.c-ring {
+  position: relative; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
+  border: 1.5px solid var(--c-gold);
+  background: radial-gradient(circle, rgba(255, 238, 205, .34), rgba(250, 214, 160, .2) 70%);
+  box-shadow: 0 0 14px rgba(226, 170, 90, .4), inset 0 0 8px rgba(255, 230, 190, .4);
+  transition: transform .5s var(--ease-out), background .35s ease, box-shadow .45s ease, border-color .35s ease, opacity .25s ease;
+}
+/* second ring for press and drag */
+.c-ring-outer {
+  position: absolute; inset: -9px; border-radius: 50%; border: 1px solid rgba(201, 161, 74, .55);
+  box-shadow: 0 0 10px rgba(226, 170, 90, .25);
+  opacity: 0; transform: scale(.8); transition: opacity .3s ease, transform .5s var(--ease-out);
+}
+
+/* hover: ring opens up and fills with light */
+.cursor.is-hover .c-ring { transform: scale(1.55); background: radial-gradient(circle, rgba(255, 240, 212, .55), rgba(250, 214, 160, .32) 70%); box-shadow: 0 0 22px rgba(226, 170, 90, .5), inset 0 0 10px rgba(255, 238, 210, .5); }
+.cursor.is-hover .c-dot { transform: scale(1.25); }
+
+/* press: ring tightens, second ring appears */
+.cursor.is-press .c-ring { transform: scale(.88); }
+.cursor.is-press.is-hover .c-ring { transform: scale(1.35); }
+.cursor.is-press .c-ring-outer, .cursor.is-drag .c-ring-outer { opacity: 1; transform: none; }
+.cursor.is-drag .c-ring { transform: scale(1.2); }
+
+/* aura over the statue */
+.cursor.is-aura .c-ring {
+  transform: scale(1.4); background: radial-gradient(circle, rgba(255, 238, 205, .4), rgba(250, 200, 130, .22) 70%);
+  box-shadow: 0 0 28px 14px rgba(240, 160, 60, .32), 0 0 60px 26px rgba(240, 160, 60, .14), inset 0 0 10px rgba(255, 238, 210, .5);
+}
+
+/* click ripple */
+.c-ripple {
+  position: fixed; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
+  border: 1px solid var(--c-gold); box-shadow: 0 0 10px rgba(226, 170, 90, .35);
+  animation: c-ripple .9s var(--ease-out) forwards;
+}
+@keyframes c-ripple { from { opacity: .85; transform: scale(.9); } to { opacity: 0; transform: scale(2.6); } }
+
+/* text fields keep the native caret; hidden off-window */
+.cursor.is-text .c-ring, .cursor.is-text .c-dot,
+.cursor.is-hidden .c-ring, .cursor.is-hidden .c-dot { opacity: 0; }
+.cursor.is-text .c-ring { transform: scale(.5); }
+
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }

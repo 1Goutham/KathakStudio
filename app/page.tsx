@@ -5,6 +5,7 @@ import ScrollTimeline from "@/components/ScrollTimeline";
 import FocusList from "@/components/FocusList";
 import PointerLight from "@/components/PointerLight";
 import Motion from "@/components/Motion";
+import Cursor from "@/components/Cursor";
 import Split, { wordCount } from "@/components/Split";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Mandala, Divider } from "@/components/Motif";
@@ -35,6 +36,7 @@ export default function Home() {
       <Header />
       <PointerLight />
       <Motion />
+      <Cursor />
       <main id="top">
         <Hero />
 

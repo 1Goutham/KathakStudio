@@ -20,6 +20,7 @@ npm run build && npm start
 - `components/Motion.tsx`: scroll reveals (masked word-rise headings, soft fade-up text, unmasking cards, drawing dividers), Lenis smooth scroll and the gold progress line. Respects `prefers-reduced-motion`; content is never hidden without JS.
 - `components/Split.tsx`: splits headings into words for the reveal.
 - Input-driven extras: `ScrollTimeline` (journey line fills with scroll), `FocusList` (heritage chapter in view is highlighted), `PointerLight` (cursor light on cards).
+- `components/Cursor.tsx`: custom cursor (red dot in a gold ring) with hover, press/drag, click-ripple and statue-aura states; mouse devices only, text fields keep the native caret.
 - `components/` also has `Header`, `EnquiryForm` (opens WhatsApp with the enquiry ready to send), `Motif` (SVG mandala).
 
 ## Before launch
