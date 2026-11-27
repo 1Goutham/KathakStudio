@@ -406,7 +406,7 @@ html.lenis, html.lenis body { height: auto; }
 
 /* ===================== Light-section atmosphere ===================== */
 /* paper grain, one large line mandala half out of frame (alternating corners), and a soft warm glow */
-:root { --bg-mandala: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22 fill=%22none%22 stroke=%22%23b07a35%22 stroke-width=%220.45%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2296%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 stroke-dasharray=%221 3%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2278%22 stroke-dasharray=%222 4%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2222%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%228%22/%3E%3Cg transform=%22rotate%280.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2822.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2845.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2867.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2890.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28112.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28135.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28157.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28180.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28202.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28225.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28247.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28270.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28292.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28315.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28337.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2815 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%2845 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%2875 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28105 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28135 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28165 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28195 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28225 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28255 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28285 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28315 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28345 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3C/svg%3E"); --bg-grain: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 .42  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .07 0%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23n%29%22/%3E%3C/svg%3E"); }
+:root { --bg-mandala: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22 fill=%22none%22 stroke=%22%23b07a35%22 stroke-width=%220.45%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2296%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2290%22 stroke-dasharray=%221 3%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2278%22 stroke-dasharray=%222 4%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2222%22/%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%228%22/%3E%3Cg transform=%22rotate%280.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2822.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2845.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2867.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2890.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28112.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28135.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28157.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28180.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28202.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28225.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28247.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28270.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28292.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28315.0 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%28337.5 100 100%29%22%3E%3Cpath d=%22M100 24 C 112 50, 112 64, 100 78 C 88 64, 88 50, 100 24 Z%22/%3E%3Ccircle cx=%22100%22 cy=%2214%22 r=%222.2%22/%3E%3C/g%3E%3Cg transform=%22rotate%2815 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%2845 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%2875 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28105 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28135 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28165 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28195 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28225 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28255 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28285 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28315 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3Cg transform=%22rotate%28345 100 100%29%22%3E%3Cpath d=%22M100 80 C 105 88, 105 92, 100 98 C 95 92, 95 88, 100 80 Z%22/%3E%3C/g%3E%3C/svg%3E"); --bg-grain: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 .42  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .095 0%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url%28%23n%29%22/%3E%3C/svg%3E"); }
 .section:not(.dark):not(.observe) { isolation: isolate; }
 .section:not(.dark):not(.observe) > .container { position: relative; z-index: 1; }
 .section:not(.dark):not(.observe)::before,
@@ -416,10 +416,10 @@ html.lenis, html.lenis body { height: auto; }
   inset: 0;
   background:
     var(--bg-grain),
-    radial-gradient(60% 55% at var(--glow-x, 100%) var(--glow-y, 100%), rgba(192, 138, 62, .10), transparent 70%);
+    radial-gradient(60% 55% at var(--glow-x, 100%) var(--glow-y, 100%), rgba(192, 138, 62, .15), transparent 70%);
 }
 .section:not(.dark):not(.observe)::before {
-  width: min(760px, 90vw); aspect-ratio: 1; opacity: .16;
+  width: min(760px, 90vw); aspect-ratio: 1; opacity: .24;
   background: var(--bg-mandala) center / contain no-repeat;
 }
 /* paper-toned sections: mandala top-left, glow bottom-right */
@@ -429,5 +429,89 @@ html.lenis, html.lenis body { height: auto; }
 .section:not(.paper):not(.dark):not(.observe)::before { bottom: max(-300px, -32vw); right: max(-300px, -36vw); }
 .section:not(.paper):not(.dark):not(.observe) { --glow-x: 0%; --glow-y: 0%; }
 @media (max-width: 640px) {
-  .section:not(.dark):not(.observe)::before { opacity: .12; }
+  .section:not(.dark):not(.observe)::before { opacity: .18; }
+}
+
+/* ===================== Micro-interactions & section reveals ===================== */
+/* background mandala: settles in when the section arrives, then turns slowly with scroll */
+.section:not(.dark):not(.observe)::before {
+  transform: rotate(calc(var(--sp, 0) * 28deg)) scale(1);
+  transition: opacity 1.8s var(--ease-soft, ease), transform .2s linear;
+}
+.js .section:not(.dark):not(.observe):not(.in-view)::before { opacity: 0; transform: rotate(-24deg) scale(.88); transition: none; }
+.js .section.in-view:not(.dark):not(.observe)::before { animation: mandala-in 2.2s var(--ease-out) both; }
+@keyframes mandala-in { from { opacity: 0; scale: .88; rotate: -24deg; } }
+
+/* buttons: a soft sheen crosses on hover, a gentle press */
+.btn { position: relative; overflow: hidden; isolation: isolate; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .18s ease; }
+.btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 236, 200, .28) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform .8s var(--ease-out);
+}
+.btn:hover::after { transform: translateX(120%); }
+.btn:active { transform: scale(.97); }
+
+/* nav: the section you are reading stays underlined */
+.nav a.is-current::after { width: 100% !important; }
+.nav a.is-current { color: var(--gold); }
+.header:not(.is-scrolled):not(.is-open) .nav a.is-current { color: var(--gold-soft); }
+
+/* cards: number warms and slides, kicker opens up */
+.pillar .num, .ritual .num { transition: color .4s ease, transform .5s var(--ease-out); }
+.pillar:hover .num, .ritual:hover .num { color: var(--gold); transform: translateX(6px); }
+.pillar .kicker, .life-card .kicker { transition: letter-spacing .5s var(--ease-out); }
+.pillar:hover .kicker, .life-card:hover .kicker { letter-spacing: .3em; }
+.life-card .life-mandala { transition: transform 1.6s var(--ease-out), opacity .6s ease; }
+.life-card:hover .life-mandala { transform: rotate(22deg); opacity: .22; }
+
+/* card contents follow the card's unmasking, one beat after it (animation, so later hovers stay instant) */
+.js [data-reveal="mask"]:is(.pillar, .ritual, .life-card, .reflection, .review, .observe-card, .address-card):not(.is-in) > :not(.life-mandala) { opacity: 0; }
+.js [data-reveal="mask"]:is(.pillar, .ritual, .life-card, .reflection, .review, .observe-card, .address-card).is-in > :not(.life-mandala) {
+  animation: child-in 1.2s var(--ease-out) backwards;
+  animation-delay: calc(var(--d, 0ms) + 280ms + var(--ci, 0) * 70ms);
+}
+@keyframes child-in { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
+[data-reveal="mask"] > :nth-child(2) { --ci: 1; }
+[data-reveal="mask"] > :nth-child(3) { --ci: 2; }
+[data-reveal="mask"] > :nth-child(4) { --ci: 3; }
+[data-reveal="mask"] > :nth-child(5) { --ci: 4; }
+
+/* checklist ticks pop in after their line */
+.js .checks li::before { transform: scale(0) rotate(-45deg); transition: transform .7s cubic-bezier(.34, 1.56, .64, 1) calc(var(--d, 0ms) + .35s); }
+.js .checks li.is-in::before { transform: none; }
+
+/* journey: a ring ripples out once as each step lights */
+.t-dot::after { content: ""; position: absolute; inset: -1px; border-radius: 50%; border: 1px solid var(--gold); opacity: 0; pointer-events: none; }
+.t-step.is-lit .t-dot::after { animation: ripple 1.4s var(--ease-out) 1; }
+@keyframes ripple { from { opacity: .7; transform: scale(1); } to { opacity: 0; transform: scale(2.1); } }
+
+/* video stories: play button breathes forward on hover */
+.play { transition: transform .5s var(--ease-out), box-shadow .5s ease; }
+.play::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid rgba(251, 241, 226, .7); opacity: 0; transform: scale(.85); transition: opacity .5s ease, transform .6s var(--ease-out); }
+.video-card:hover .play { transform: scale(1.08); box-shadow: 0 12px 30px -10px rgba(42, 10, 14, .5); }
+.video-card:hover .play::after { opacity: 1; transform: none; }
+
+/* form: the field you are in lights its label */
+.form-card label { transition: color .3s ease; }
+.form-card label:focus-within { color: var(--maroon); }
+
+/* footer & social links: underline draws from the left */
+.socials a { position: relative; transition: color .3s ease; }
+.socials a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease-out); }
+.socials a:hover::after { transform: none; }
+
+/* floating WhatsApp: lifts slightly under the pointer */
+.wa-float { transition: transform .4s var(--ease-out), box-shadow .4s ease; }
+.wa-float:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -10px rgba(0, 0, 0, .4); }
+
+/* divider star turns when its heading is hovered */
+.section-head:hover .divider svg { transform: rotate(90deg); transition: transform .9s var(--ease-out); }
+
+@media (prefers-reduced-motion: reduce) {
+  .section:not(.dark):not(.observe)::before { animation: none !important; transform: none !important; opacity: .24 !important; }
+  .js [data-reveal="mask"] > * { opacity: 1 !important; animation: none !important; }
+  .js .checks li::before { transform: none !important; }
+  .t-step.is-lit .t-dot::after { animation: none; }
+  .btn::after { display: none; }
 }

@@ -46,6 +46,54 @@ export default function Motion() {
     else targets.forEach((t) => io.observe(t));
     root.classList.add("motion-ready");
 
+    // --- count-up for stats ("15+ Years", "200+") when they reveal ---
+    const countUp = (el: HTMLElement) => {
+      const m = el.textContent?.match(/^(\d+)([\s\S]*)$/);
+      if (!m || reduce) return;
+      const end = +m[1], rest = m[2], t0 = performance.now(), dur = 1600;
+      const tick = (now: number) => {
+        const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+        el.textContent = Math.round(end * e) + rest;
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      el.textContent = "0" + rest;
+      requestAnimationFrame(tick);
+    };
+    const statIo = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      statIo.unobserve(e.target);
+      setTimeout(() => countUp(e.target as HTMLElement), 350);
+    }), { threshold: 0.6 });
+    document.querySelectorAll<HTMLElement>(".stat strong").forEach((el) => statIo.observe(el));
+
+    // --- sections: reveal their background ornament, track scroll progress, light the nav ---
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main section"));
+    const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav a[href^="#"]'));
+    const secIo = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) (e.target as HTMLElement).classList.add("in-view");
+    }), { threshold: 0.12 });
+    sections.forEach((s) => (reduce ? s.classList.add("in-view") : secIo.observe(s)));
+
+    let sraf = 0;
+    const onSections = () => {
+      sraf = 0;
+      const vh = window.innerHeight;
+      let current = "";
+      for (const s of sections) {
+        const r = s.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) continue;
+        // -1 entering from below .. 0 centred .. 1 leaving at the top
+        const sp = Math.max(-1, Math.min(1, (vh / 2 - (r.top + r.height / 2)) / (vh / 2 + r.height / 2)));
+        if (!reduce) s.style.setProperty("--sp", sp.toFixed(3));
+        if (s.id && r.top <= vh * 0.4 && r.bottom > vh * 0.4) current = "#" + s.id;
+      }
+      navLinks.forEach((a) => a.classList.toggle("is-current", a.getAttribute("href") === current));
+    };
+    const queueSections = () => { if (!sraf) sraf = requestAnimationFrame(onSections); };
+    window.addEventListener("scroll", queueSections, { passive: true });
+    window.addEventListener("resize", queueSections);
+    onSections();
+
     // --- smooth scroll + progress line ---
     const bar = document.querySelector<HTMLElement>(".scroll-progress");
     const setProgress = () => {
@@ -62,8 +110,10 @@ export default function Motion() {
     setProgress();
 
     return () => {
-      io.disconnect(); cancelAnimationFrame(raf); lenis?.destroy();
+      io.disconnect(); statIo.disconnect(); secIo.disconnect(); cancelAnimationFrame(raf); cancelAnimationFrame(sraf); lenis?.destroy();
       window.removeEventListener("scroll", setProgress);
+      window.removeEventListener("scroll", queueSections);
+      window.removeEventListener("resize", queueSections);
     };
   }, []);
   return <div className="scroll-progress" aria-hidden="true" />;
