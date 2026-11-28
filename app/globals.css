@@ -507,64 +507,6 @@ html.lenis, html.lenis body { height: auto; }
   .btn::after { display: none; }
 }
 
-/* ===================== Custom cursor ===================== */
-:root { --c-red: #b0141f; --c-gold: #c9a14a; }
-.cursor { position: fixed; inset: 0; z-index: 9999; pointer-events: none; }
-html.has-cursor, html.has-cursor * { cursor: none !important; }
-html.has-cursor :is(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea) { cursor: text !important; }
-.c-pos { position: fixed; left: 0; top: 0; will-change: transform; }
-
-.c-dot {
-  width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #d8333d, var(--c-red) 55%, #7e0c14);
-  box-shadow: 0 0 0 1.5px rgba(255, 244, 228, .55), 0 1px 3px rgba(60, 0, 8, .35);
-  transition: transform .35s var(--ease-out), opacity .25s ease;
-}
-.c-ring {
-  position: relative; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
-  border: 1.5px solid var(--c-gold);
-  background: radial-gradient(circle, rgba(255, 238, 205, .34), rgba(250, 214, 160, .2) 70%);
-  box-shadow: 0 0 14px rgba(226, 170, 90, .4), inset 0 0 8px rgba(255, 230, 190, .4);
-  transition: transform .5s var(--ease-out), background .35s ease, box-shadow .45s ease, border-color .35s ease, opacity .25s ease;
-}
-/* second ring for press and drag */
-.c-ring-outer {
-  position: absolute; inset: -9px; border-radius: 50%; border: 1px solid rgba(201, 161, 74, .55);
-  box-shadow: 0 0 10px rgba(226, 170, 90, .25);
-  opacity: 0; transform: scale(.8); transition: opacity .3s ease, transform .5s var(--ease-out);
-}
-
-/* hover: ring opens up and fills with light */
-.cursor.is-hover .c-ring { transform: scale(1.55); background: radial-gradient(circle, rgba(255, 240, 212, .55), rgba(250, 214, 160, .32) 70%); box-shadow: 0 0 22px rgba(226, 170, 90, .5), inset 0 0 10px rgba(255, 238, 210, .5); }
-.cursor.is-hover .c-dot { transform: scale(1.25); }
-
-/* press: ring tightens, second ring appears */
-.cursor.is-press .c-ring { transform: scale(.88); }
-.cursor.is-press.is-hover .c-ring { transform: scale(1.35); }
-.cursor.is-press .c-ring-outer, .cursor.is-drag .c-ring-outer { opacity: 1; transform: none; }
-.cursor.is-drag .c-ring { transform: scale(1.2); }
-
-/* aura over the statue */
-.cursor.is-aura .c-ring {
-  transform: scale(1.4); background: radial-gradient(circle, rgba(255, 238, 205, .4), rgba(250, 200, 130, .22) 70%);
-  box-shadow: 0 0 28px 14px rgba(240, 160, 60, .32), 0 0 60px 26px rgba(240, 160, 60, .14), inset 0 0 10px rgba(255, 238, 210, .5);
-}
-
-/* click ripple */
-.c-ripple {
-  position: fixed; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
-  border: 1px solid var(--c-gold); box-shadow: 0 0 10px rgba(226, 170, 90, .35);
-  animation: c-ripple .9s var(--ease-out) forwards;
-}
-@keyframes c-ripple { from { opacity: .85; transform: scale(.9); } to { opacity: 0; transform: scale(2.6); } }
-
-/* text fields keep the native caret; hidden off-window */
-.cursor.is-text .c-ring, .cursor.is-text .c-dot,
-.cursor.is-hidden .c-ring, .cursor.is-hidden .c-dot { opacity: 0; }
-.cursor.is-text .c-ring { transform: scale(.5); }
-
-@media (hover: none), (pointer: coarse) { .cursor { display: none; } }
-
 /* ===================== Footer ===================== */
 .footer { position: relative; overflow: hidden; background: #1c0609; color: #d6c0a5; isolation: isolate; }
 .footer::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--bg-grain), radial-gradient(70% 60% at 85% 0%, rgba(120, 30, 38, .45), transparent 70%); }
@@ -657,3 +599,84 @@ html.footer-in .wa-float { opacity: 0; transform: translateY(12px) scale(.9); po
 /* observe: ring of flames, top-right */
 .section.observe::before { bottom: auto; right: max(-300px, -36vw); top: max(-300px, -32vw); opacity: .26; }
 .section.observe { --glow-x: 0%; --glow-y: 100%; }
+
+/* ===================== Gold cursor set ===================== */
+.cursor { position: fixed; inset: 0; z-index: 9999; pointer-events: none; }
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+.c-pos { position: fixed; left: 0; top: 0; will-change: transform; }
+
+/* polished gold sphere */
+.gs {
+  position: absolute; left: calc(var(--s) / -2); top: calc(var(--s) / -2); width: var(--s); height: var(--s); border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, #fffbe8 0 6%, rgba(255, 246, 214, .0) 22%),
+    radial-gradient(circle at 62% 78%, rgba(255, 214, 140, .55), rgba(255, 214, 140, 0) 38%),
+    radial-gradient(circle at 40% 36%, #f7d887 0%, #e2ac45 30%, #b17a22 58%, #6e440d 86%, #3d2306 100%);
+  box-shadow: 0 0 10px rgba(246, 196, 96, .55), 0 0 22px rgba(246, 196, 96, .22), 0 1.5px 3px rgba(50, 25, 0, .45);
+  transition: transform .45s cubic-bezier(.34, 1.56, .64, 1), opacity .25s ease;
+}
+.c-trail .gs { box-shadow: 0 0 7px rgba(246, 196, 96, .5), 0 1px 2px rgba(50, 25, 0, .4); }
+.c-trail { transition: opacity .3s ease; }
+
+/* tube strokes */
+.c-svg { position: absolute; left: -34px; top: -34px; width: 68px; height: 68px; overflow: visible; opacity: 0;
+  filter: drop-shadow(0 0 3px rgba(246, 196, 96, .65)) drop-shadow(0 1px 1px rgba(50, 25, 0, .35));
+  transition: opacity .3s ease, transform .55s cubic-bezier(.34, 1.56, .64, 1); }
+.c-svg use { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.t-shadow { stroke: #6b4410; stroke-width: 3.6; opacity: .5; }
+.t-body { stroke: url(#gold-tube); stroke-width: 2.3; }
+.t-hi { stroke: #fff6d8; stroke-width: .7; opacity: .85; transform: translate(-.45px, -.45px); }
+
+/* link: target ring spins in */
+.c-target { transform: scale(.45) rotate(-120deg); }
+.cursor.is-link .c-target { opacity: 1; transform: none; }
+.cursor.is-link .c-core { transform: scale(1.12); }
+
+/* hold: concentric rings open out one after another */
+.c-rings g { transform-origin: 0 0; opacity: 0; transform: scale(.6); transition: opacity .25s ease, transform .5s cubic-bezier(.34, 1.56, .64, 1); }
+.c-rings { opacity: 1; }
+.cursor.is-down:not(.is-text):not(.is-disabled):not(.is-statue) .c-rings g { opacity: 1; transform: none; }
+.cursor.is-down .c-rings .r2 { transition-delay: .07s; }
+.cursor.is-down .c-rings .r3 { transition-delay: .14s; }
+.cursor.is-down.is-link .c-target { opacity: 0; transform: scale(1.3) rotate(40deg); }
+.cursor.is-down .c-core { transform: scale(.88); }
+
+/* statue: arrows slide out; while dragging they spread and lean into the turn */
+.c-arrows g { transform-origin: 0 0; transition: transform .5s cubic-bezier(.34, 1.56, .64, 1); }
+.c-arrows .ar { transform: translateX(-10px) scale(.6); }
+.c-arrows .al { transform: translateX(10px) scale(.6); }
+.cursor.is-statue .c-arrows { opacity: 1; }
+.cursor.is-statue .c-arrows .ar { transform: translateX(calc(var(--lean, 0) * 5px)); }
+.cursor.is-statue .c-arrows .al { transform: translateX(calc(var(--lean, 0) * 5px)); }
+.cursor.is-statue.is-down .c-arrows .ar { transform: translateX(calc(4px + var(--lean, 0) * 7px)) scale(1.08); transition-duration: .2s; }
+.cursor.is-statue.is-down .c-arrows .al { transform: translateX(calc(-4px + var(--lean, 0) * 7px)) scale(1.08); transition-duration: .2s; }
+.cursor.is-statue .c-trail { opacity: 0; }
+
+/* text: gold I-beam (the trail rests beside it like the dot in the set) */
+.c-ibeam { transform: scaleY(.4); }
+.cursor.is-text .c-ibeam { opacity: 1; transform: none; }
+.cursor.is-text .c-core { opacity: 0; transform: scale(.3); }
+
+/* disabled: prohibition sign */
+.c-no { transform: scale(.5) rotate(-60deg); }
+.cursor.is-disabled .c-no { opacity: 1; transform: none; }
+.cursor.is-disabled .c-core, .cursor.is-disabled .c-trail { opacity: 0; }
+
+/* click: sunburst rays */
+.c-burst { position: fixed; width: 0; height: 0; }
+.c-burst i {
+  position: absolute; left: -1.2px; top: -5px; width: 2.4px; height: 10px; border-radius: 2px;
+  background: linear-gradient(#fff3c8, #e3ab46 55%, #8a5814);
+  box-shadow: 0 0 6px rgba(246, 196, 96, .7);
+  transform: rotate(var(--a)) translateY(-14px) scaleY(.4); opacity: 0;
+  animation: c-ray .6s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+@keyframes c-ray {
+  0% { opacity: 0; transform: rotate(var(--a)) translateY(-12px) scaleY(.3); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--a)) translateY(-34px) scaleY(1); }
+}
+
+.cursor.is-hidden .c-main, .cursor.is-hidden .c-trail { opacity: 0; }
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }
+@media (prefers-reduced-motion: reduce) { .c-svg, .gs, .c-rings g, .c-arrows g { transition: opacity .2s ease !important; } }
