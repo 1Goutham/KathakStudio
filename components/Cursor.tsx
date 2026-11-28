@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Gold cursor set.
- *  default   polished gold sphere with a three-sphere trail driven by a spring chain
+ *  default   a single polished gold sphere
  *  link      target ring with ticks spins in around the sphere
  *  click     sunburst rays burst from the click point
  *  hold      concentric rings open out while the button is down
@@ -16,11 +16,7 @@ const LINK = 'a, button:not([disabled]), [role="button"], select, summary, label
 const TEXT = 'input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]), textarea, [contenteditable="true"]';
 const DISABLED = 'button[disabled], [aria-disabled="true"], input[disabled], select[disabled], textarea[disabled]';
 
-const TRAIL = [
-  { size: 9, gap: 12 },
-  { size: 6.5, gap: 9 },
-  { size: 4.5, gap: 7 },
-];
+const TRAIL: { size: number; gap: number }[] = [];   // single sphere, no trailing balls
 
 /* Shapes are drawn three times (shadow, gold body, highlight) to read as polished tubes. */
 function Tube({ id }: { id: string }) {

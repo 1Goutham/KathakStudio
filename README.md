@@ -20,7 +20,7 @@ npm run build && npm start
 - `components/Motion.tsx`: scroll reveals (masked word-rise headings, soft fade-up text, unmasking cards, drawing dividers), Lenis smooth scroll and the gold progress line. Respects `prefers-reduced-motion`; content is never hidden without JS.
 - `components/Split.tsx`: splits headings into words for the reveal.
 - Input-driven extras: `ScrollTimeline` (journey line fills with scroll), `FocusList` (heritage chapter in view is highlighted), `PointerLight` (cursor light on cards).
-- `components/Cursor.tsx`: gold cursor set drawn in code: polished sphere with a spring-driven three-sphere trail; target ring on links, sunburst on click, concentric rings while held, ←•→ arrows over the statue (lean into the drag), gold I-beam in text fields, prohibition sign on disabled controls. Mouse devices only.
+- `components/Cursor.tsx`: gold cursor set drawn in code: a single polished gold sphere; target ring on links, sunburst on click, concentric rings while held, ←•→ arrows over the statue (lean into the drag), gold I-beam in text fields, prohibition sign on disabled controls. Mouse devices only.
 - `components/Footer.tsx`: closing quote, logo, navigation, address, contact, the cursor-lit giant wordmark and the back-to-top ring.
 - Logos: `public/logo-ink-*.png` (for light backgrounds) and `public/logo-light-*.png` (ivory linework for dark backgrounds).
 - Section backgrounds: each light section carries `data-motif` (lotus, mandala, kolam, paisley, rangoli, ghungroo, prabha, padma); the line-art SVGs live in `app/globals.css` and are drawn by `scripts/build_motifs.py`.
