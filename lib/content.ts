@@ -12,6 +12,7 @@ export const site = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Thondamuthur+Road+Coimbatore+641041",
   instagram: "https://www.instagram.com/tribhang.kathak",
   facebook: "https://www.facebook.com/tribhang.kathak",
+  email: "tribhang.kathak@gmail.com",
   // Guru Ishvarya's WhatsApp (country code, no +). Enquiries and WhatsApp buttons go here.
   whatsappNumber: "918148562853",
 };
@@ -25,7 +26,7 @@ export const nav = [
   { href: "#journey", label: "Journey" },
   { href: "#heritage", label: "Heritage" },
   { href: "#voices", label: "Voices" },
-  { href: "#visit", label: "Visit" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const hero = {
@@ -240,9 +241,7 @@ export const begin = {
   ],
 };
 
-export const visit = {
-  eyebrow: "Find us",
-  titleLead: "Visit",
-  titleAccent: "Tribhang",
-  quote: "Come to learn, to reconnect with heritage, or simply to find your place, the door is open.",
+export const footer = {
+  quote: "Come to learn, to reconnect with heritage, or simply to find your place. The door is open.",
+  tagline: "Awakening the spirit through sacred steps. A space where Kathak becomes a journey of reflection, growth and belonging.",
 };

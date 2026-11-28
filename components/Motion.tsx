@@ -8,12 +8,12 @@ const GROUPS: Record<string, string> = {
   line: ".divider",
   fade: [
     ".eyebrow", ".lede", ".prose", ".outro", ".welcome", ".hero-body", ".hero-ctas", ".sub-head", ".pull",
-    ".creds li", ".badge", ".checks li", ".next-steps h3", ".next-steps li", ".visit-quote", ".heritage-quote",
+    ".creds li", ".badge", ".checks li", ".next-steps h3", ".next-steps li", ".footer-quote p", ".footer-col", ".heritage-quote",
     ".chapter", ".note", ".stat", ".t-card", ".guru h2",
   ].join(","),
   mask: [
     ".pillar", ".ritual", ".life-card", ".video-card", ".reflection", ".review", ".observe-card",
-    ".form-card", ".map-wrap", ".address-card", ".portrait-frame",
+    ".form-card", ".portrait-frame",
   ].join(","),
 };
 

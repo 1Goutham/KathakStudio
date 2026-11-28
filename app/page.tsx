@@ -6,12 +6,13 @@ import FocusList from "@/components/FocusList";
 import PointerLight from "@/components/PointerLight";
 import Motion from "@/components/Motion";
 import Cursor from "@/components/Cursor";
+import Footer from "@/components/Footer";
 import Split, { wordCount } from "@/components/Split";
 import EnquiryForm from "@/components/EnquiryForm";
 import { Mandala, Divider } from "@/components/Motif";
 import {
   site, whatsappLink, invitation, pillars, guru, journey, rituals,
-  heritage, life, voices, observe, begin, visit,
+  heritage, life, voices, observe, begin,
 } from "@/lib/content";
 
 function SectionHead({ eyebrow, lead, accent, tail, intro, light = false }: { eyebrow: string; lead: string; accent: string; tail?: string; intro?: string; light?: boolean }) {
@@ -289,47 +290,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* VISIT */}
-        <section id="visit" className="section dark visit">
-          <div className="container">
-            <SectionHead light eyebrow={visit.eyebrow} lead={visit.titleLead} accent={visit.titleAccent} />
-            <div className="visit-grid">
-              <Box className="address-card">
-                <h3>Studio Address</h3>
-                <address>{site.address.map((l) => <span key={l}>{l}</span>)}</address>
-                <a className="btn btn-ghost-light" href={site.mapsUrl} target="_blank" rel="noopener noreferrer">View on Google Maps</a>
-              </Box>
-              <Box className="map-wrap">
-                <iframe
-                  title="Map to Tribhang"
-                  src="https://www.google.com/maps?q=Thondamuthur+Road+Vadavalli+Coimbatore+641041&output=embed"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </Box>
-            </div>
-            <Box className="visit-quote">
-              <p>&ldquo;{visit.quote}&rdquo;</p>
-              <span>{site.name}, {site.city}</span>
-            </Box>
-          </div>
-        </section>
       </main>
 
-      <footer className="footer">
-        <div className="container footer-inner">
-          <div>
-            <p className="brand-name">{site.name}</p>
-            <p className="brand-sub">The Kathak Studio · {site.city}</p>
-          </div>
-          <div className="socials">
-            <a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </div>
-          <p className="copy">© {new Date().getFullYear()} {site.fullName}</p>
-        </div>
-      </footer>
+      <Footer />
 
       <a className="wa-float" href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
