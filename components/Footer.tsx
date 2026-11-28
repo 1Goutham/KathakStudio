@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import { site, whatsappLink, footer } from "@/lib/content";
 
+const credit = footer.credit;
+
 const NAV = [
   { href: "#top", label: "Home" },
   { href: "#about", label: "About" },
@@ -22,6 +24,23 @@ const Icon = {
 
 export default function Footer() {
   const ring = useRef<HTMLSpanElement>(null);
+  const mark = useRef<HTMLDivElement>(null);
+  const word = useRef<HTMLSpanElement>(null);
+
+  // size the wordmark so the whole word spans the content width exactly, at any screen size
+  useEffect(() => {
+    const box = mark.current, w = word.current;
+    if (!box || !w) return;
+    const fit = () => {
+      w.style.fontSize = "100px";
+      const natural = w.scrollWidth;
+      if (natural) w.style.fontSize = `${(100 * box.clientWidth) / natural}px`;
+    };
+    fit();
+    document.fonts?.ready.then(fit);
+    const ro = new ResizeObserver(fit); ro.observe(box);
+    return () => ro.disconnect();
+  }, []);
 
   // the back-to-top ring turns with the page
   useEffect(() => {
@@ -87,13 +106,21 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-mark" data-light aria-hidden="true">
-        <span>{site.name}</span>
+      <div className="container">
+        <div className="footer-mark" data-light aria-hidden="true" ref={mark}>
+          <span ref={word}>{site.name}</span>
+        </div>
       </div>
 
       <div className="container footer-bottom">
         <p>© {new Date().getFullYear()} {site.fullName}. All rights reserved.</p>
-        <p className="footer-love">Made with <span aria-label="love">♥</span> for the love of Kathak</p>
+        {credit.whatsapp ? (
+          <a className="footer-love" href={`https://wa.me/${credit.whatsapp}?text=${encodeURIComponent(credit.message)}`} target="_blank" rel="noopener noreferrer" title={`Message ${credit.name} on WhatsApp`}>
+            Designed &amp; crafted with <span aria-label="love">♥</span> by <strong>{credit.name}</strong>
+          </a>
+        ) : (
+          <p className="footer-love">Designed &amp; crafted with <span aria-label="love">♥</span> by <strong>{credit.name}</strong></p>
+        )}
         <a href="#top" className="to-top" aria-label="Back to top">
           <span className="to-top-ring" ref={ring}>
             <svg viewBox="0 0 100 100" aria-hidden="true">

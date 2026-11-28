@@ -598,20 +598,25 @@ html.has-cursor :is(input:not([type="checkbox"]):not([type="radio"]):not([type="
 .footer-cta { margin-top: 12px; }
 
 /* giant wordmark: outlined, filled with gold where the cursor passes */
-.footer-mark { position: relative; text-align: center; line-height: .8; user-select: none; overflow: hidden; padding-top: 10px; }
+.footer-mark { position: relative; user-select: none; padding: clamp(10px, 2vw, 24px) 0 clamp(18px, 3vw, 34px); }
 .footer-mark span {
-  display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(5rem, 21vw, 19rem); letter-spacing: -.01em;
-  color: transparent; -webkit-text-stroke: 1px rgba(226, 196, 143, .3);
-  background: radial-gradient(260px circle at var(--mx, -400px) var(--my, -400px), rgba(232, 190, 120, .95), rgba(232, 190, 120, 0) 70%);
+  display: inline-block; white-space: nowrap; font-family: var(--serif); font-weight: 500; font-size: 18vw;
+  line-height: 1.05; letter-spacing: -.005em; padding-bottom: .2em; margin-bottom: -.12em;
+  color: transparent;
+  background:
+    radial-gradient(320px circle at var(--mx, -500px) var(--my, -500px), rgba(244, 206, 140, .9), rgba(244, 206, 140, 0) 70%),
+    linear-gradient(180deg, rgba(232, 188, 118, .34) 0%, rgba(196, 130, 78, .2) 55%, rgba(140, 70, 52, .1) 100%);
   -webkit-background-clip: text; background-clip: text;
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 92%); mask-image: linear-gradient(to bottom, #000 45%, transparent 92%);
-  margin-bottom: -.12em;
 }
 .footer-mark::after { content: none; }
 .footer-bottom { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 22px 0 30px; border-top: 1px solid rgba(226, 196, 143, .14); font-size: .82rem; color: #a8917a; }
 .footer-bottom p { margin: 0; }
 .footer-love span { color: #d63a3a; display: inline-block; transition: transform .4s cubic-bezier(.34, 1.56, .64, 1); }
 .footer-love:hover span { transform: scale(1.35); }
+.footer-love strong { font-weight: 500; color: #e7d5bd; }
+a.footer-love { position: relative; color: inherit; }
+a.footer-love strong { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .5s var(--ease-out), color .3s ease; }
+a.footer-love:hover strong { color: var(--gold-soft); background-size: 100% 1px; }
 
 /* back to top: circular lettering like the logo, turning with the page */
 .to-top { position: relative; width: 84px; height: 84px; display: grid; place-items: center; color: #f3e6d4; border-radius: 50%; }

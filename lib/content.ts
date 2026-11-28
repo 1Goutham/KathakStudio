@@ -243,5 +243,11 @@ export const begin = {
 
 export const footer = {
   quote: "Come to learn, to reconnect with heritage, or simply to find your place. The door is open.",
+  // Site credit. Add Keerthana's WhatsApp (country code, no +, e.g. "919xxxxxxxxx") to make the credit a link.
+  credit: {
+    name: "Keerthana",
+    whatsapp: "",
+    message: "Hi Keerthana! I came across the Tribhang website you designed and loved it. I have an idea and would like your help with web development or a digital product. Could we have a quick chat?",
+  },
   tagline: "Awakening the spirit through sacred steps. A space where Kathak becomes a journey of reflection, growth and belonging.",
 };
