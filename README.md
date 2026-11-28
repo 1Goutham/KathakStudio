@@ -23,6 +23,7 @@ npm run build && npm start
 - `components/Cursor.tsx`: custom cursor (red dot in a gold ring) with hover, press/drag, click-ripple and statue-aura states; mouse devices only, text fields keep the native caret.
 - `components/Footer.tsx`: closing quote, logo, navigation, address, contact, the cursor-lit giant wordmark and the back-to-top ring.
 - Logos: `public/logo-ink-*.png` (for light backgrounds) and `public/logo-light-*.png` (ivory linework for dark backgrounds).
+- Section backgrounds: each light section carries `data-motif` (lotus, mandala, kolam, paisley, rangoli, ghungroo, prabha, padma); the line-art SVGs live in `app/globals.css` and are drawn by `scripts/build_motifs.py`.
 - `components/` also has `Header`, `EnquiryForm` (opens WhatsApp with the enquiry ready to send), `Motif` (SVG mandala).
 
 ## Before launch

@@ -42,7 +42,7 @@ export default function Home() {
         <Hero />
 
         {/* INVITATION */}
-        <section id="invitation" className="section paper">
+        <section id="invitation" className="section paper" data-motif="lotus">
           <div className="container narrow">
             <SectionHead eyebrow={invitation.eyebrow} lead={invitation.titleLead} accent={invitation.titleAccent} />
             <Box><p className="prose center">{invitation.body}</p></Box>
@@ -63,7 +63,7 @@ export default function Home() {
         </section>
 
         {/* PILLARS */}
-        <section id="about" className="section">
+        <section id="about" className="section" data-motif="mandala">
           <div className="container">
             <SectionHead eyebrow={pillars.eyebrow} lead={pillars.titleLead} accent={pillars.titleAccent} intro={pillars.intro} />
             <div className="grid-3">
@@ -121,7 +121,7 @@ export default function Home() {
         </section>
 
         {/* JOURNEY */}
-        <section id="journey" className="section paper">
+        <section id="journey" className="section paper" data-motif="kolam">
           <div className="container">
             <SectionHead eyebrow={journey.eyebrow} lead={journey.titleLead} accent={journey.titleAccent} intro={journey.intro} />
             <ScrollTimeline>
@@ -141,7 +141,7 @@ export default function Home() {
         </section>
 
         {/* RITUALS */}
-        <section className="section">
+        <section className="section" data-motif="paisley">
           <div className="container">
             <SectionHead eyebrow={rituals.eyebrow} lead={rituals.titleLead} accent={rituals.titleAccent} tail={rituals.titleTail} intro={rituals.intro} />
             <div className="grid-3 rituals">
@@ -185,7 +185,7 @@ export default function Home() {
         </section>
 
         {/* LIFE */}
-        <section className="section paper">
+        <section className="section paper" data-motif="rangoli">
           <div className="container">
             <SectionHead eyebrow={life.eyebrow} lead={life.titleLead} accent={life.titleAccent} />
             <div className="life-grid">
@@ -202,7 +202,7 @@ export default function Home() {
         </section>
 
         {/* VOICES */}
-        <section id="voices" className="section">
+        <section id="voices" className="section" data-motif="ghungroo">
           <div className="container">
             <SectionHead eyebrow={voices.eyebrow} lead={voices.titleLead} accent={voices.titleAccent} />
 
@@ -250,8 +250,7 @@ export default function Home() {
         </section>
 
         {/* OBSERVE */}
-        <section id="observe" className="section observe">
-          <Mandala className="bg-mandala" />
+        <section id="observe" className="section observe" data-motif="prabha">
           <div className="container observe-inner">
             <Box>
               <p className="eyebrow">{observe.eyebrow}</p>
@@ -269,7 +268,7 @@ export default function Home() {
         </section>
 
         {/* BEGIN */}
-        <section id="begin" className="section paper">
+        <section id="begin" className="section paper" data-motif="padma">
           <div className="container">
             <SectionHead eyebrow={begin.eyebrow} lead={begin.titleLead} accent={begin.titleAccent} intro={begin.body} />
             <div className="begin-grid">
